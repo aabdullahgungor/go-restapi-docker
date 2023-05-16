@@ -21,10 +21,11 @@ type Student struct {
 
 func main() {
 	router := gin.Default()
+	gin.SetMode(gin.ReleaseMode)
 	router.GET("/students", listStudents)
 	router.POST("/students", createStudent)
 	router.GET("/students/:id", getStudent)
-	router.Run("localhost:9090")
+	router.Run("localhost:9091")
 }
 
 func listStudents(context *gin.Context) {
